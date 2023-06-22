@@ -26,23 +26,12 @@
                                     @csrf
 
                                     <div class="col-12">
-                                        <label for="yourUsername" class="form-label">Username</label>
-                                        <input type="text" name="username" class="form-control" id="yourUsername"
-                                            required>
-                                        @error('username')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
+                                        <label for="username" class="form-label">Username</label>
+                                        <input type="text" name="username" class="form-control" id="username" required>
                                     </div>
                                     <div class="col-12">
                                         <label for="password" class="form-label">Password</label>
                                         <input type="password" name="password" class="form-control" id="password" required>
-                                        @error('password')
-                                            <div class="invalid-feedback">
-                                                {{ $message }}
-                                            </div>
-                                        @enderror
                                     </div>
 
                                     <div class="col-12">
