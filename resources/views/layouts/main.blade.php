@@ -26,16 +26,14 @@
     <!-- AOS -->
     <link rel="stylesheet" href="assets/vendor/aos-2.3.4/css/ajax_libs_aos_2.3.4_aos.css" />
     <!-- Style -->
-    <link rel="stylesheet" href="assets/css/admin.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
-
-    @livewireStyles
 </head>
 
 <body>
 
-    {{ $slot }}
+    @yield('body')
 
     <!-- Jquery -->
     <script src="assets/vendor/jquery-3.7.0/jquery-3.7.0.min.js"></script>
@@ -46,9 +44,7 @@
     <!-- Glightbox -->
     <script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
     <!-- Script -->
-    <script src="assets/js/admin.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
-
-@livewireScripts
 
 </html>
