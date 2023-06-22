@@ -2,7 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Guest;
+use App\Models\Message;
 use Livewire\Component;
+use Livewire\WithPagination;
+use App\Exports\GuestsExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class Admin extends Component
 {
@@ -86,7 +91,8 @@ class Admin extends Component
         $last_id = $save_guest->id;
 
         $guest = Guest::findOrFail($last_id);
-        $guest->code = md5($last_id);
+        $guest->code = substr(md5($last_id), 0, 12);
+
         $guest->save();
         session()->flash('message', 'Guest Added Successfully');
         $this->resetInput();
@@ -203,7 +209,7 @@ class Admin extends Component
             ->orderBy($this->sortByName, $this->sortDirection)
             ->paginate($this->perPage);
 
-        return view('livewire.dashboard', ['guests' => $guests]);
+        return view('livewire.admin', ['guests' => $guests]);
     }
 
     // Logout

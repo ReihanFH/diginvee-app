@@ -32,21 +32,25 @@
                                     target="_blank">Check
                                     In</a>
                             </div>
-                            <div class="col-auto">
-                                @include('livewire.messagemodal')
-                            </div>
-                            <div class="col-auto">
-                                <button type="button" class="btn app-btn-primary float-end" data-bs-toggle="modal"
-                                    data-bs-target="#guestModal">
-                                    <i class="bi bi-plus-lg"></i> New Guest
-                                </button>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
             @include('livewire.guesttotal')
+
+            <div class="row my-4 justify-content-end">
+                <div class="col-12">
+
+                    <button type="button" class="btn app-btn-primary float-end ms-2" data-bs-toggle="modal"
+                        data-bs-target="#guestModal">
+                        <i class="bi bi-plus-lg"></i> New Guest
+                    </button>
+                    <div class="float-end">
+                        @include('livewire.messagemodal')
+                    </div>
+                </div>
+            </div>
 
             @include('livewire.table')
 
@@ -69,7 +73,7 @@
     @include('livewire.logout')
     @include('livewire.guestmodal')
 
-    <!-- DASHBOARD JAVASCRIPT -->
+    <!-- ADMIN JAVASCRIPT -->
     <script type="text/javascript">
         // Toast and modal show-hide function
         window.addEventListener('show-toasts', event => {
@@ -100,8 +104,8 @@
             return result;
         }
 
-        setInterval(() => {
-            document.querySelector('[wire\\:click="refresh"]').click();
-        }, 1000);
+        // setInterval(() => {
+        //     document.querySelector('[wire\\:click="refresh"]').click();
+        // }, 1000);
     </script>
 </div>

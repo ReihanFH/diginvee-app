@@ -1,6 +1,4 @@
-@extends('layouts.main')
-
-@section('body')
+<div>
     <!-- PAGE LOADER -->
     <div id="loading" class="overlay">
         <div class="overlayDoor"></div>
@@ -21,10 +19,11 @@
                             <div class="row justify-content-center">
                                 <div class="col-auto cover-text">
                                     <h1>Arin &amp; Indra</h1>
-                                    <p class="py-1">Kepada Yth, Tamu Undangan</p>
+                                    <p class="py-1">Kepada Yth, {{ $name }}</p>
                                     <div class="col-auto text-center pt-5">
-                                        <a type="button" class="btn btn-open" data-bs-dismiss="modal" data-dismiss="modal"
-                                            id="open"><i class="bi bi-envelope-open-heart"></i>&nbsp; Buka Undangan</a>
+                                        <a type="button" class="btn btn-open" data-bs-dismiss="modal"
+                                            data-dismiss="modal" id="open"><i
+                                                class="bi bi-envelope-open-heart"></i>&nbsp; Buka Undangan</a>
                                     </div>
                                 </div>
                             </div>
@@ -32,7 +31,8 @@
                     </div>
 
                     <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
-                        <div class="carousel-item active" style="background-image: url(assets/img/gallery-pic-0.jpg)"></div>
+                        <div class="carousel-item active" style="background-image: url(assets/img/gallery-pic-0.jpg)">
+                        </div>
                         <div class="carousel-item" style="background-image: url(assets/img/gallery-pic-1.jpg)"></div>
                         <div class="carousel-item" style="background-image: url(assets/img/gallery-pic-2.jpg)"></div>
                         <div class="carousel-item" style="background-image: url(assets/img/gallery-pic-3.jpg)"></div>
@@ -65,14 +65,18 @@
                 <p class="pt-2 mb-0" data-aos="zoom-in-up" data-aos-anchor="#first-line">⇝ Sabtu, 1 Juli 2023 ⇜</p>
                 <div id="countdown">
                     <ul class="p-0">
-                        <li class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="#first-line"><span
-                                id="days" class="align-items-center"></span>Hari</li>
-                        <li class="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-anchor="#first-line"><span
-                                id="hours" class="align-items-center"></span>Jam</li>
-                        <li class="text-center" data-aos="fade-up" data-aos-delay="500" data-aos-anchor="#first-line"><span
-                                id="minutes" class="align-items-center"></span>Menit</li>
-                        <li class="text-center" data-aos="fade-up" data-aos-delay="700" data-aos-anchor="#first-line"><span
-                                id="seconds" class="align-items-center"></span>Detik</li>
+                        <li class="text-center" data-aos="fade-up" data-aos-delay="100" data-aos-anchor="#first-line">
+                            <span id="days" class="align-items-center"></span>Hari
+                        </li>
+                        <li class="text-center" data-aos="fade-up" data-aos-delay="300" data-aos-anchor="#first-line">
+                            <span id="hours" class="align-items-center"></span>Jam
+                        </li>
+                        <li class="text-center" data-aos="fade-up" data-aos-delay="500" data-aos-anchor="#first-line">
+                            <span id="minutes" class="align-items-center"></span>Menit
+                        </li>
+                        <li class="text-center" data-aos="fade-up" data-aos-delay="700" data-aos-anchor="#first-line">
+                            <span id="seconds" class="align-items-center"></span>Detik
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -106,7 +110,8 @@
     <!-- EVENT -->
     <section id="event" class="event bg-paper text-center">
         <div class="position-relative">
-            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3" data-aos="fade-up" />
+            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3"
+                data-aos="fade-up" />
         </div>
         <div class="row align-items-center py-3 py-sm-5 my-auto mx-4">
             <div class="col-12">
@@ -115,7 +120,8 @@
                         <div class="mx-auto">
                             <h2 class="mb-3" data-aos="fade-up">Resepsi Pernikahan</h2>
                             <p class="card-date my-3" data-aos="fade-up">⇝ Sabtu, 1 Juli 2023 ⇜</p>
-                            <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;11.00 — 13.00
+                            <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;11.00 —
+                                13.00
                             </p>
                             <p class="card-text my-2" data-aos="fade-up">
                                 <i class="bi bi-geo-alt"></i>&nbsp;Gedung Auditorium BPSDM Hukum dan HAM<br />
@@ -175,7 +181,8 @@
     <!-- EVENT -->
     <section id="event" class="event bg-paper text-center">
         <div class="position-relative">
-            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3" data-aos="fade-up" />
+            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3"
+                data-aos="fade-up" />
         </div>
         <div class="row align-items-center py-3 py-sm-5 my-auto mx-4">
             <div class="col-12">
@@ -184,7 +191,8 @@
                         <div class="mx-md-auto">
                             <p class="about-verse mx-auto" data-aos="fade-up">
                                 “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan
-                                dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya
+                                dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan
+                                dijadikan-Nya
                                 diantaramu rasa kasih dan sayang.
                                 Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
                                 berfikir.”
@@ -225,7 +233,8 @@
                         </div>
                         <div class="text-center">
                             <h2 data-aos="fade-up">Hadiah Pernikahan</h2>
-                            <p class="text-gift" data-aos="fade-up">Silahkan kirim hadiah melalui nomor rekening maupun
+                            <p class="text-gift" data-aos="fade-up">Silahkan kirim hadiah melalui nomor rekening
+                                maupun
                                 dompet digital berikut :</p>
                         </div>
                         <div class="creditcard">
@@ -303,23 +312,25 @@
                     <h2 data-aos="fade-up">Doa dan Ucapan</h2>
                     <p class="text-wishes" data-aos="fade-up">Kirimkan Doa & Ucapan Untuk Kami</p>
                 </div>
-                {{-- <div class="col-12 col-md-8">
-                    <input type="text" class="form-control mb-3" value="Nama Tamu" data-aos="fade-up"
-                        style="color: #888d73" disabled />
-                    <div class="form-floating mb-3" data-aos="fade-up">
-                        <textarea class="form-control" placeholder="Doa dan Ucapan" id="wishes-form" style="height: 100px"></textarea>
-                        <label for="wishes-form">Doa dan Ucapan</label>
+                @if ($name !== 'Tamu Undangan')
+                    <div class="col-12 col-md-8">
+                        <input type="text" class="form-control mb-3" value="{{ $name }}"
+                            data-aos="fade-up" style="color: #888d73" disabled />
+                        <div class="form-floating mb-3" data-aos="fade-up">
+                            <textarea class="form-control" placeholder="Doa dan Ucapan" id="wishes-form" style="height: 100px"></textarea>
+                            <label for="wishes-form">Doa dan Ucapan</label>
+                        </div>
+                        <select class="form-select" data-aos="fade-up" style="color: #888d73">
+                            <option selected disabled>Konfirmasi Kehadiran</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                        <div class="mt-4 d-grid text-center" data-aos="fade-up">
+                            <button class="btn btn-outline-secondary"><i class="bi bi-send"></i>&nbsp; Kirim</button>
+                        </div>
                     </div>
-                    <select class="form-select" data-aos="fade-up" style="color: #888d73">
-                        <option selected disabled>Konfirmasi Kehadiran</option>
-                        <option value="Hadir">Hadir</option>
-                        <option value="Tidak Hadir">Tidak Hadir</option>
-                    </select>
-                    <div class="mt-4 d-grid text-center" data-aos="fade-up">
-                        <button class="btn btn-outline-secondary"><i class="bi bi-send"></i>&nbsp; Kirim</button>
-                    </div>
-                </div> --}}
-                <div class="col-md-8 mt-5">
+                @endif
+                <div class="col-md-8 @if ($name !== 'Tamu Undangan') mt-5 @endif">
                     <div class="card mb-2" data-aos="fade-up">
                         <div class="d-flex flex-row p-3">
                             <div class="w-100">
@@ -329,8 +340,10 @@
                                                 class="bi bi-envelope-paper-heart"></i></span>
                                     </div>
                                 </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
+                                    amet,
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna
                                     aliqua. Ut enim ad minim veniam</p>
                                 <div class="row">
                                     <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
@@ -349,8 +362,10 @@
                                                 class="bi bi-envelope-paper-heart"></i></span>
                                     </div>
                                 </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
+                                    amet,
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna
                                     aliqua. Ut enim ad minim veniam</p>
                                 <div class="row">
                                     <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
@@ -369,8 +384,10 @@
                                                 class="bi bi-envelope-paper-heart"></i></span>
                                     </div>
                                 </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
+                                    amet,
+                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                    magna
                                     aliqua. Ut enim ad minim veniam</p>
                                 <div class="row">
                                     <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
@@ -433,4 +450,4 @@
             </ul>
         </div>
     </footer>
-@endsection
+</div>

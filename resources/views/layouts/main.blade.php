@@ -33,6 +33,7 @@
 
 <body>
 
+    {{ $slot }}
     @yield('body')
 
     <!-- Jquery -->
