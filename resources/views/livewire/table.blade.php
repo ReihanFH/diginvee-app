@@ -119,7 +119,7 @@
             </div>
         </div>
         <div class="d-flex justify-content-center">
-            {{ $guests->links() }}
+            {{ $guests->onEachSide(0)->links() }}
         </div>
 
     </div>

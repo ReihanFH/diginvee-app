@@ -397,8 +397,6 @@
                                 </div>
                             </div>
                         </div>
-                    @empty
-                        <div>No data</div>
                     @endforelse
                     {{-- <div class="text-center mt-3">
                         <a wire:click="load" class="btn btn-outline-secondary" data-aos="fade-up">Load More</a>
