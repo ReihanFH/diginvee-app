@@ -19,7 +19,7 @@ class GuestsImport implements ToModel, WithHeadingRow
         return new Guest([
             'id' => $row['id'],
             'name' => $row['name'],
-            'phone' => $row['phone'],
+            'phone' => '62' . $row['phone'],
             'note' => $row['note'],
             'code' => substr(md5($row['id']), 0, 12),
         ]);
