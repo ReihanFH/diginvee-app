@@ -28,7 +28,7 @@ Route::get('/admin', Admin::class)->name('admin')->middleware('auth');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login-attempt', [AuthController::class, 'authenticate'])->middleware('guest');
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/logout', [AuthController::class, 'logout'])->middleware('auth');
 
 Route::get('/{code}', Invitation::class)->name('invitation');
 Route::get('/', Index::class)->name('index');
