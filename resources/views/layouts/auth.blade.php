@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <!-- Icon -->
-    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
 
     <title>Arin & Indra</title>
     <meta content="" name="description">

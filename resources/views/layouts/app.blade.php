@@ -9,7 +9,7 @@
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <!-- Icon -->
-    <link rel="icon" href="assets/img/favicon.ico" />
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon" />
     <title>Arin & Indra</title>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
