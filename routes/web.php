@@ -24,7 +24,7 @@ use App\Http\Controllers\AuthController;
 // Route::get('/admin', function () {
 //     return view('welcome');
 // })->name('admin')->middleware('auth');
-Route::get('/admin', Admin::class)->name('admin');
+Route::get('/admin', Admin::class)->name('admin')->middleware('auth');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login-attempt', [AuthController::class, 'authenticate'])->middleware('guest');

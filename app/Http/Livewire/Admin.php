@@ -7,16 +7,20 @@ use App\Models\Message;
 use Livewire\Component;
 use Livewire\WithPagination;
 use App\Exports\GuestsExport;
+use App\Imports\GuestsImport;
+use Livewire\WithFileUploads;
 use Maatwebsite\Excel\Facades\Excel;
 
 class Admin extends Component
 {
     use WithPagination;
+    use WithFileUploads;
 
     protected $paginationTheme = 'bootstrap';
 
     public $name, $phone, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
     public $top_message, $body_message, $bottom_message, $message_id, $saved_top_message, $saved_body_message, $saved_bottom_message;
+    public $file, $importedRows;
 
     public $search = '';
     public $perPage = 20;
@@ -55,7 +59,7 @@ class Admin extends Component
     {
         return [
             'name' => 'required|string|min:6',
-            'phone' => 'required|numeric|digits_between:10,11'
+            'phone' => 'numeric|digits_between:10,13'
         ];
     }
 
@@ -147,6 +151,14 @@ class Admin extends Component
     public function export()
     {
         return Excel::download(new GuestsExport, 'Guest Lists.xlsx');
+    }
+
+    // Import Excel
+    public function import()
+    {
+        Excel::import(new GuestsImport, $this->file);
+
+        session()->flash('message', 'Guest Imported Successfully!');
     }
 
     // Broadcast message create & edit

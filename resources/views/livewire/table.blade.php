@@ -34,6 +34,7 @@
                             </th>
                             {{-- <th class="cell">Phone</th> --}}
                             <th class="cell">Link</th>
+                            <th class="cell">QR</th>
                             {{-- <th class="cell">Status</th> --}}
                             <th class="cell">
                                 Actions
@@ -60,6 +61,15 @@
                                             id="copy_button_{{ $guest->id }}" class="copy-button" title="Copy"><i
                                                 class="bi bi-files"></i></a>
                                     </div>
+                                </td>
+                                <td class="cell">
+                                    <a href="data:image/png;base64, {!! base64_encode(
+                                        QrCode::format('png')->size(500)->margin(3)->generate($guest->code),
+                                    ) !!}"
+                                        download="QR Code {{ $guest->name }} - Pernikahan Arin & Indra"
+                                        class="btn btn-outline-secondary">
+                                        <i class="bi bi-download"></i>
+                                    </a>
                                 </td>
                                 {{-- <td class="cell">
                                     @if ((bool) $guest->status === false)

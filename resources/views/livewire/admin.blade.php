@@ -41,11 +41,15 @@
 
             <div class="row my-4 justify-content-end">
                 <div class="col-12">
-
+                    {{-- <button type="button" class="btn app-btn-primary float-end ms-2" data-bs-toggle="modal"
+                        data-bs-target="#importModal">
+                        <i class="bi bi-plus-lg"></i> Import Guest
+                    </button> --}}
                     <button type="button" class="btn app-btn-primary float-end ms-2" data-bs-toggle="modal"
                         data-bs-target="#guestModal">
                         <i class="bi bi-plus-lg"></i> New Guest
                     </button>
+
                     <div class="float-end">
                         @include('livewire.messagemodal')
                     </div>

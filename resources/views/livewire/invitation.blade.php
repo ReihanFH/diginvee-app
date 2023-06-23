@@ -1,4 +1,4 @@
-<div>
+<div wire:ignore>
     <!-- PAGE LOADER -->
     <div id="loading" class="overlay">
         <div class="overlayDoor"></div>
@@ -120,7 +120,8 @@
                         <div class="mx-auto">
                             <h2 class="mb-3" data-aos="fade-up">Resepsi Pernikahan</h2>
                             <p class="card-date my-3" data-aos="fade-up">⇝ Sabtu, 1 Juli 2023 ⇜</p>
-                            <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;11.00 —
+                            <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;
+                                11.00 —
                                 13.00
                             </p>
                             <p class="card-text my-2" data-aos="fade-up">
@@ -137,76 +138,24 @@
         </div>
     </section>
 
-    <!-- GALLERY -->
-    <section id="gallery" class="gallery">
-        <div class="container" data-aos="fade-up">
-            <div class="text-center pt-5 pb-5">
-                <h2 data-aos="fade-up">Galeri</h2>
-            </div>
-
-            <div class="row gy-3 pb-5">
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
-                    <a href="assets/img/gallery-pic-1.jpg" class="glightbox"><img src="assets/img/gallery-pic-1.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
-                </div>
-
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
-                    <a href="assets/img/gallery-pic-2.jpg" class="glightbox"><img src="assets/img/gallery-pic-2.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
-                </div>
-
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
-                    <a href="assets/img/gallery-pic-3.jpg" class="glightbox"><img src="assets/img/gallery-pic-3.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
-                </div>
-
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
-                    <a href="assets/img/gallery-pic-4.jpg" class="glightbox"><img src="assets/img/gallery-pic-4.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
-                </div>
-
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
-                    <a href="assets/img/gallery-pic-5.jpg" class="glightbox"><img src="assets/img/gallery-pic-5.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
-                </div>
-
-                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
-                    <a href="assets/img/gallery-pic-6.jpg" class="glightbox"><img src="assets/img/gallery-pic-6.jpg"
-                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+    <!-- QR Code -->
+    @if ($code !== null)
+        <section id="qr" class="qr py-2">
+            <div class="row align-items-center py-3 mx-4">
+                <div class="col-md-4 mx-auto text-center">
+                    <h2 data-aos="fade-up">QR Code</h2>
+                    <p data-aos="fade-up" class="text-qr">Scan QR saat datang ke acara pernikahan</p>
+                    <img data-aos="fade-up" src="data:image/png;base64, {!! base64_encode(
+                        QrCode::format('png')->size(500)->margin(2)->generate($code),
+                    ) !!}"
+                        class="mx-auto col-md-4" style="width: 100%; height: auto">
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- EVENT -->
-    <section id="event" class="event bg-paper text-center">
-        <div class="position-relative">
-            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3"
-                data-aos="fade-up" />
-        </div>
-        <div class="row align-items-center py-3 py-sm-5 my-auto mx-4">
-            <div class="col-12">
-                <div class="card event-card border-2 border-light-subtle mx-auto" data-aos="fade-up">
-                    <div class="card-body row align-items-center">
-                        <div class="mx-md-auto">
-                            <p class="about-verse mx-auto" data-aos="fade-up">
-                                “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan
-                                dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan
-                                dijadikan-Nya
-                                diantaramu rasa kasih dan sayang.
-                                Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
-                                berfikir.”
-                            </p>
-                            <p class="about-surah mx-auto mb-0" data-aos="fade-up">(QS. Ar-Rum Ayat 21)</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    @endif
 
     <!-- GIFT -->
-    <section id="gift" class="gift">
+    <section id="gift" class="gift bg-paper py-3">
         <div class="container mt-5 mb-5">
             <div class="row d-flex justify-content-center align-items-center">
                 <div class="col-12 col-md-8 text-center mb-3">
@@ -304,6 +253,75 @@
         </div>
     </section>
 
+    <!-- GALLERY -->
+    <section id="gallery" class="gallery">
+        <div class="container" data-aos="fade-up">
+            <div class="text-center pt-5 pb-5">
+                <h2 data-aos="fade-up">Galeri</h2>
+            </div>
+
+            <div class="row gy-3 pb-5">
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
+                    <a href="assets/img/gallery-pic-1.jpg" class="glightbox"><img src="assets/img/gallery-pic-1.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
+                    <a href="assets/img/gallery-pic-2.jpg" class="glightbox"><img src="assets/img/gallery-pic-2.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
+                    <a href="assets/img/gallery-pic-3.jpg" class="glightbox"><img src="assets/img/gallery-pic-3.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
+                    <a href="assets/img/gallery-pic-4.jpg" class="glightbox"><img src="assets/img/gallery-pic-4.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="200">
+                    <a href="assets/img/gallery-pic-5.jpg" class="glightbox"><img src="assets/img/gallery-pic-5.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+
+                <div class="col-lg-4 col-6 gallery-item" data-aos="zoom-in-up" data-aos-delay="400">
+                    <a href="assets/img/gallery-pic-6.jpg" class="glightbox"><img src="assets/img/gallery-pic-6.jpg"
+                            class="gallery-img img-fluid rounded-3" alt="" /></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- EVENT -->
+    <section id="event" class="event bg-paper text-center">
+        <div class="position-relative">
+            <img src="assets/img/flower-4-min.png" class="event-divider-1 position-absolute my-3"
+                data-aos="fade-up" />
+        </div>
+        <div class="row align-items-center py-3 py-sm-5 my-auto mx-4">
+            <div class="col-12">
+                <div class="card event-card border-2 border-light-subtle mx-auto" data-aos="fade-up">
+                    <div class="card-body row align-items-center">
+                        <div class="mx-md-auto">
+                            <p class="about-verse mx-auto" data-aos="fade-up">
+                                “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan-pasangan
+                                dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan
+                                dijadikan-Nya
+                                diantaramu rasa kasih dan sayang.
+                                Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang
+                                berfikir.”
+                            </p>
+                            <p class="about-surah mx-auto mb-0" data-aos="fade-up">(QS. Ar-Rum Ayat 21)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- WISHES -->
     <section id="wishes" class="wishes">
         <div class="container mt-5 mb-5">
@@ -313,25 +331,32 @@
                     <p class="text-wishes" data-aos="fade-up">Kirimkan Doa & Ucapan Untuk Kami</p>
                 </div>
                 @if ($name !== 'Tamu Undangan')
-                    <div class="col-12 col-md-8">
-                        <input type="text" class="form-control mb-3" value="{{ $name }}"
-                            data-aos="fade-up" style="color: #888d73" disabled />
+                    <form wire:submit.prevent="saveWish" class="col-12 col-md-8">
+                        <input wire:model="name" type="text" class="form-control mb-3"
+                            value="{{ $name }}" data-aos="fade-up" style="color: #888d73" disabled />
                         <div class="form-floating mb-3" data-aos="fade-up">
-                            <textarea class="form-control" placeholder="Doa dan Ucapan" id="wishes-form" style="height: 100px"></textarea>
+                            <textarea wire:model="wish" class="form-control" placeholder="Doa dan Ucapan" id="wishes-form"
+                                style="height: 100px" @if ($guestwish !== null) @if ($guestwish->name == $name) disabled @endif @endif></textarea>
                             <label for="wishes-form">Doa dan Ucapan</label>
                         </div>
-                        <select class="form-select" data-aos="fade-up" style="color: #888d73">
-                            <option selected disabled>Konfirmasi Kehadiran</option>
+                        <select wire:model="attendance" class="form-select" data-aos="fade-up"
+                            style="color: #888d73"
+                            @if ($guestwish !== null) @if ($guestwish->name == $name) disabled @endif
+                            @endif>
+                            <option value="" selected disabled>Konfirmasi Kehadiran</option>
                             <option value="Hadir">Hadir</option>
                             <option value="Tidak Hadir">Tidak Hadir</option>
                         </select>
                         <div class="mt-4 d-grid text-center" data-aos="fade-up">
-                            <button class="btn btn-outline-secondary"><i class="bi bi-send"></i>&nbsp; Kirim</button>
+                            <button type="submit" class="btn btn-outline-secondary"
+                                @if ($guestwish !== null) @if ($guestwish->name == $name) disabled @endif
+                                @endif><i class="bi bi-send"></i>&nbsp;
+                                Kirim</button>
                         </div>
-                    </div>
+                    </form>
                 @endif
                 <div class="col-md-8 @if ($name !== 'Tamu Undangan') mt-5 @endif">
-                    <div class="card mb-2" data-aos="fade-up">
+                    {{-- <div class="card mb-2" data-aos="fade-up">
                         <div class="d-flex flex-row p-3">
                             <div class="w-100">
                                 <div class="d-flex justify-content-between align-items-center">
@@ -352,54 +377,32 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card mb-2" data-aos="fade-up">
-                        <div class="d-flex flex-row p-3">
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <span class="user" data-aos="fade-up">diginvee&nbsp;<i
-                                                class="bi bi-envelope-paper-heart"></i></span>
+                    </div> --}}
+                    @forelse ($wishes as $row)
+                        <div class="card mb-2" data-aos="fade-up">
+                            <div class="d-flex flex-row p-3">
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <span class="user" data-aos="fade-up">{{ $row->name }}</span>
+                                        </div>
                                     </div>
-                                </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
-                                    amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna
-                                    aliqua. Ut enim ad minim veniam</p>
-                                <div class="row">
-                                    <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
-                                    <a class="col-6 text-end btn-reply" href="#" data-aos="fade-up"><i
-                                            class="bi bi-reply"></i>&nbsp;Reply</a>
+                                    <p class="text-justify comment-text my-2" data-aos="fade-up">{{ $row->wish }}
+                                    </p>
+                                    <div class="row">
+                                        <small class="col-6" data-aos="fade-up">{{ $row->created_at }}</small>
+                                        {{-- <a class="col-6 text-end btn-reply" href="#" data-aos="fade-up"><i
+                                                class="bi bi-reply"></i>&nbsp;Reply</a> --}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="card mb-2" data-aos="fade-up">
-                        <div class="d-flex flex-row p-3">
-                            <div class="w-100">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <span class="user" data-aos="fade-up">diginvee&nbsp;<i
-                                                class="bi bi-envelope-paper-heart"></i></span>
-                                    </div>
-                                </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
-                                    amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna
-                                    aliqua. Ut enim ad minim veniam</p>
-                                <div class="row">
-                                    <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
-                                    <a class="col-6 text-end btn-reply" href="#" data-aos="fade-up"><i
-                                            class="bi bi-reply"></i>&nbsp;Reply</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="text-center mt-3">
-                        <button class="btn btn-outline-secondary" data-aos="fade-up">Load More</button>
-                    </div>
+                    @empty
+                        <div>No data</div>
+                    @endforelse
+                    {{-- <div class="text-center mt-3">
+                        <a wire:click="load" class="btn btn-outline-secondary" data-aos="fade-up">Load More</a>
+                    </div> --}}
                 </div>
             </div>
         </div>

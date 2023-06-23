@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Guest extends Model
+class Wish extends Model
 {
     use HasFactory;
 
-    protected $table = 'guests';
+    protected $table = 'wishes';
 
     protected $fillable = [
         'name',
-        'phone',
-        'note',
-        'status',
+        'wish',
+        'attendance',
     ];
 }
