@@ -34,7 +34,7 @@
                             </th>
                             {{-- <th class="cell">Phone</th> --}}
                             <th class="cell">Link</th>
-                            <th class="cell">QR</th>
+                            {{-- <th class="cell">QR</th> --}}
                             {{-- <th class="cell">Status</th> --}}
                             <th class="cell">
                                 Actions
@@ -62,7 +62,7 @@
                                                 class="bi bi-files"></i></a>
                                     </div>
                                 </td>
-                                <td class="cell">
+                                {{-- <td class="cell">
                                     <a href="data:image/png;base64, {!! base64_encode(
                                         QrCode::format('png')->size(500)->margin(3)->generate($guest->code),
                                     ) !!}"
@@ -70,7 +70,7 @@
                                         class="btn btn-outline-secondary">
                                         <i class="bi bi-download"></i>
                                     </a>
-                                </td>
+                                </td> --}}
                                 {{-- <td class="cell">
                                     @if ((bool) $guest->status === false)
                                         <span class="badge rounded-pill bg-danger text-danger">

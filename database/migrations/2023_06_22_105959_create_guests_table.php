@@ -17,8 +17,8 @@ return new class extends Migration {
             $table->string('name');
             $table->string('phone')->nullable();
             $table->string('note')->nullable();
+            $table->string('code')->nullable();
             $table->boolean('status')->default(0);
-            $table->char('code')->nullable();
             $table->timestamps();
         });
     }

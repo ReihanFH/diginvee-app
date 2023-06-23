@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <div class="mb-3">
                         <label>Upload File</label>
-                        <input type="file" wire:model="file" class="form-control" accept=".xlsx, .xls" required>
+                        <input type="file" wire:model="file" class="form-control" required>
                     </div>
                 </div>
                 <div class="modal-footer">

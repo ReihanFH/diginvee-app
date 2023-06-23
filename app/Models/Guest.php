@@ -15,6 +15,7 @@ class Guest extends Model
         'name',
         'phone',
         'note',
+        'code',
         'status',
     ];
 }
