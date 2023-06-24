@@ -696,24 +696,6 @@ footer .footer .credits {
     width: auto;
 }
 
-footer .footer .social-link {
-    display: block;
-    text-decoration: none;
-    align-items: center;
-    height: 3rem;
-    width: 3rem;
-    line-height: 3.3rem;
-    font-size: 1.5rem;
-    background-color: rgb(219, 173, 58);
-    transition: background-color 0.15s ease-in-out;
-    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.1);
-}
-
-footer .footer .social-link:hover {
-    background-color: rgba(218, 165, 32, 0.775);
-    text-decoration: none;
-}
-
 svg {
     width: 100%;
 }
