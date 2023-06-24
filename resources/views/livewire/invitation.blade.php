@@ -19,7 +19,9 @@
                             <div class="row justify-content-center">
                                 <div class="col-auto cover-text">
                                     <h1>Arin &amp; Indra</h1>
-                                    <p class="py-1">Kepada Yth, {{ $name }}</p>
+                                    @if ($name !== null)
+                                        <p class="py-1">Kepada Yth, {{ $name }}</p>
+                                    @endif
                                     <div class="col-auto text-center pt-5">
                                         <a type="button" class="btn btn-open" data-bs-dismiss="modal"
                                             data-dismiss="modal" id="open"><i
@@ -138,14 +140,14 @@
     </section>
 
     <!-- QR Code -->
-    @if ($code != null)
+    @if ($code === null)
         <section id="qr" class="qr py-2">
             <div class="row align-items-center py-3 mx-4">
                 <div class="col-md-4 mx-auto text-center">
                     <h2 data-aos="fade-up">QR Code</h2>
                     <p data-aos="fade-up" class="text-qr">Mohon tunjukkan QR Code saat menghadiri acara resepsi</p>
                     <img data-aos="fade-up" src="data:image/png;base64, {!! base64_encode(
-                        QrCode::format('png')->size(500)->margin(2)->generate($code),
+                        QrCode::format('png')->size(500)->margin(2)->generate('cfcd208495d5'),
                     ) !!}"
                         class="mx-auto col-md-4" style="width: 100%; height: auto">
                 </div>
@@ -158,7 +160,7 @@
                     <h2 data-aos="fade-up">QR Code</h2>
                     <p data-aos="fade-up" class="text-qr">Mohon tunjukkan QR Code saat menghadiri acara resepsi</p>
                     <img data-aos="fade-up" src="data:image/png;base64, {!! base64_encode(
-                        QrCode::format('png')->size(500)->margin(2)->generate('cfcd208495d5'),
+                        QrCode::format('png')->size(500)->margin(2)->generate($code),
                     ) !!}"
                         class="mx-auto col-md-4" style="width: 100%; height: auto">
                 </div>
@@ -342,7 +344,7 @@
                     <h2 data-aos="fade-up">Doa dan Ucapan</h2>
                     <p class="text-wishes" data-aos="fade-up">Kirimkan Doa & Ucapan Untuk Kami</p>
                 </div>
-                @if ($name !== 'Tamu Undangan')
+                @if ($name !== null)
                     <form wire:submit.prevent="saveWish" class="col-12 col-md-8">
                         <input wire:model="name" type="text" class="form-control mb-3"
                             value="{{ $name }}" data-aos="fade-up" style="color: #888d73" disabled />
@@ -367,7 +369,7 @@
                         </div>
                     </form>
                 @endif
-                <div class="col-md-8 @if ($name !== 'Tamu Undangan') mt-5 @endif">
+                <div class="col-md-8 @if ($name !== null) mt-5 @endif">
                     <div class="card mb-2" data-aos="fade-up">
                         <div class="d-flex flex-row p-3">
                             <div class="w-100">

@@ -7,8 +7,9 @@ use Livewire\Component;
 
 class index extends Component
 {
-    public $name = 'Tamu Undangan';
+    public $name = null;
     public $code = null;
+    public $guestwish = null;
 
     public function render()
     {
