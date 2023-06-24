@@ -121,8 +121,7 @@
                             <h2 class="mb-3" data-aos="fade-up">Resepsi Pernikahan</h2>
                             <p class="card-date my-3" data-aos="fade-up">⇝ Sabtu, 1 Juli 2023 ⇜</p>
                             <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;
-                                11.00 —
-                                13.00
+                                11.00 WIB — 13.00 WIB
                             </p>
                             <p class="card-text my-2" data-aos="fade-up">
                                 <i class="bi bi-geo-alt"></i>&nbsp;Gedung Auditorium BPSDM Hukum dan HAM<br />
@@ -144,7 +143,7 @@
             <div class="row align-items-center py-3 mx-4">
                 <div class="col-md-4 mx-auto text-center">
                     <h2 data-aos="fade-up">QR Code</h2>
-                    <p data-aos="fade-up" class="text-qr">Scan QR saat datang ke acara pernikahan</p>
+                    <p data-aos="fade-up" class="text-qr">Mohon tunjukkan QR Code saat menghadiri acara resepsi</p>
                     <img data-aos="fade-up" src="data:image/png;base64, {!! base64_encode(
                         QrCode::format('png')->size(500)->margin(2)->generate($code),
                     ) !!}"
@@ -356,28 +355,28 @@
                     </form>
                 @endif
                 <div class="col-md-8 @if ($name !== 'Tamu Undangan') mt-5 @endif">
-                    {{-- <div class="card mb-2" data-aos="fade-up">
+                    <div class="card mb-2" data-aos="fade-up">
                         <div class="d-flex flex-row p-3">
                             <div class="w-100">
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div class="d-flex flex-row align-items-center">
-                                        <span class="user" data-aos="fade-up">diginvee&nbsp;<i
-                                                class="bi bi-envelope-paper-heart"></i></span>
+                                        <span class="user" data-aos="fade-up">
+                                            diginvee&nbsp;
+                                            <i class="bi bi-envelope-paper-heart"></i>
+                                        </span>
                                     </div>
                                 </div>
-                                <p class="text-justify comment-text my-2" data-aos="fade-up">Lorem ipsum dolor sit
-                                    amet,
-                                    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                                    magna
-                                    aliqua. Ut enim ad minim veniam</p>
-                                <div class="row">
+                                <p class="text-justify comment-text my-2" data-aos="fade-up">Dear Arin and Indra, May
+                                    your union be a beacon of inspiration for us all. Congratulations on your wedding
+                                    day, and may your love story continue to flourish in the years to come.</p>
+                                {{-- <div class="row">
                                     <small class="col-6" data-aos="fade-up">18 June 2023, 12:00:43</small>
                                     <a class="col-6 text-end btn-reply" href="#" data-aos="fade-up"><i
                                             class="bi bi-reply"></i>&nbsp;Reply</a>
-                                </div>
+                                </div> --}}
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                     @forelse ($wishes as $row)
                         <div class="card mb-2" data-aos="fade-up">
                             <div class="d-flex flex-row p-3">

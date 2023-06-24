@@ -2,10 +2,11 @@
 
     <nav class="navbar fixed-top navbar-expand-lg bg-light shadow-lg px-md-3 px-lg-4">
         <div class="container-xl">
-            <a class="navbar-brand" href="/admin">Weddinve</a>
+            <a class="navbar-brand" href="/admin"><img src="assets/img/logo-diginvee-color.png" alt=""
+                    style="height: 24px"></a>
             <div class="float-end">
-                <a type="button" class="btn app-btn-outline-danger" data-bs-toggle="modal" data-bs-target="#logoutModal"><i
-                        class="bi bi-box-arrow-right"></i>
+                <a type="button" class="btn app-btn-outline-danger" data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right"></i>
                     Logout</a>
             </div>
         </div>
