@@ -138,7 +138,7 @@
     </section>
 
     <!-- QR Code -->
-    @if ($code !== null)
+    @if ($code != null)
         <section id="qr" class="qr py-2">
             <div class="row align-items-center py-3 mx-4">
                 <div class="col-md-4 mx-auto text-center">
