@@ -19,7 +19,7 @@
                             <div class="row justify-content-center">
                                 <div class="col-auto cover-text">
                                     <h1>Arin &amp; Indra</h1>
-                                    @if ($name != null)
+                                    @if (is_null($name) === false)
                                         <p class="py-1">Kepada Yth, {{ $name }}</p>
                                     @endif
                                     <div class="col-auto text-center pt-5">
@@ -140,7 +140,7 @@
     </section>
 
     <!-- QR Code -->
-    @if ($code == null)
+    @if ($code === null)
         <section id="qr" class="qr py-2">
             <div class="row align-items-center py-3 mx-4">
                 <div class="col-md-4 mx-auto text-center">
@@ -344,18 +344,18 @@
                     <h2 data-aos="fade-up">Doa dan Ucapan</h2>
                     <p class="text-wishes" data-aos="fade-up">Kirimkan Doa & Ucapan Untuk Kami</p>
                 </div>
-                @if ($name != null)
+                @if (is_null($name) === false)
                     <form wire:submit.prevent="saveWish" class="col-12 col-md-8">
                         <input wire:model="name" type="text" class="form-control mb-3"
                             value="{{ $name }}" data-aos="fade-up" style="color: #888d73" disabled />
                         <div class="form-floating mb-3" data-aos="fade-up">
                             <textarea wire:model="wish" class="form-control" placeholder="Doa dan Ucapan" id="wishes-form"
-                                style="height: 100px" @if ($guestwish != null) @if ($guestwish->name == $name) disabled @endif @endif></textarea>
+                                style="height: 100px" @if (is_null($guestwish) === false) @if ($guestwish->name === $name) disabled @endif @endif></textarea>
                             <label for="wishes-form">Doa dan Ucapan</label>
                         </div>
                         <select wire:model="attendance" class="form-select" data-aos="fade-up"
                             style="color: #888d73"
-                            @if ($guestwish !== null) @if ($guestwish->name == $name) disabled @endif
+                            @if (is_null($guestwish) === false) @if ($guestwish->name === $name) disabled @endif
                             @endif>
                             <option value="" selected disabled>Konfirmasi Kehadiran</option>
                             <option value="Hadir">Hadir</option>
@@ -363,13 +363,13 @@
                         </select>
                         <div class="mt-4 d-grid text-center" data-aos="fade-up">
                             <button type="submit" class="btn btn-outline-secondary"
-                                @if ($guestwish !== null) @if ($guestwish->name == $name) disabled @endif
+                                @if (is_null($guestwish) === false) @if ($guestwish->name === $name) disabled @endif
                                 @endif><i class="bi bi-send"></i>&nbsp;
                                 Kirim</button>
                         </div>
                     </form>
                 @endif
-                <div class="col-md-8 @if ($name != null) mt-5 @endif">
+                <div class="col-md-8 @if (is_null($name) === false) mt-5 @endif">
                     <div class="card mb-2" data-aos="fade-up">
                         <div class="d-flex flex-row p-3">
                             <div class="w-100">
