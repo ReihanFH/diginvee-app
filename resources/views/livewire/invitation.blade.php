@@ -168,7 +168,7 @@
         </section>
     @endif
 
-    @if ($note == 'OMba Arin' || 'CMba Arin' || 'Mas Indra')
+    @if ($note == 'OMba Arin' || 'Mas Indra')
         <!-- GIFT -->
         <section id="gift" class="gift bg-paper py-3">
             <div class="container mt-5 mb-5">
