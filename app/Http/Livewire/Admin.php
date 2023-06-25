@@ -60,7 +60,7 @@ class Admin extends Component
     {
         return [
             'name' => 'required|string',
-            'phone' => 'nullable|numeric|digits_between:8,13',
+            'phone' => 'nullable|numeric|digits_between:9,13',
             'note' => 'nullable|string'
         ];
     }
