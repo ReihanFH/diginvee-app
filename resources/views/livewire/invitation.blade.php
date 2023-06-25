@@ -20,7 +20,7 @@
                                 <div class="col-auto cover-text">
                                     <h1>Arin &amp; Indra</h1>
                                     @if (!is_null($name))
-                                        <p class="py-1">Kepada Yth, {{ $name }}</p>
+                                        <p class="py-1">Kepada Yth,<br>{{ $name }}</p>
                                     @endif
                                     <div class="col-auto text-center pt-5">
                                         <a type="button" class="btn btn-open" data-bs-dismiss="modal"
