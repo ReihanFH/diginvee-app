@@ -28,6 +28,14 @@
                             @enderror
                         </div>
                     </div>
+                    <div class="mb-3">
+                        <label>Note</label>
+                        <input type="text" wire:model="note"
+                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @else is-valid @endif">
+                        @error('note')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn app-btn-tertiary" wire:click="closeModal"

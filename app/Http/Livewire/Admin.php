@@ -60,7 +60,8 @@ class Admin extends Component
     {
         return [
             'name' => 'required|string|min:6',
-            'phone' => 'numeric|digits_between:10,13'
+            'phone' => 'numeric|digits_between:10,13',
+            'note' => 'string'
         ];
     }
 
@@ -92,6 +93,7 @@ class Admin extends Component
         $save_guest = Guest::create([
             'name' => $validatedData['name'],
             'phone' => '62' . $validatedData['phone'],
+            'note' => $validatedData['note'],
         ]);
         $last_id = $save_guest->id;
 
