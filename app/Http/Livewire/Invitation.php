@@ -10,7 +10,7 @@ class Invitation extends Component
 {
     public $name, $wish;
     public $attendance = '';
-    public $code;
+    public $code, $note;
     public $guestwish;
 
     public function mount($code)
@@ -18,6 +18,7 @@ class Invitation extends Component
         $guest = Guest::where('code', $code)->first();
         $this->name = $guest->name;
         $this->code = $guest->code;
+        $this->note = $guest->note;
 
         $this->guestwish = Wish::where('name', $this->name)->first();
     }

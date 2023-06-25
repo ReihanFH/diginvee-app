@@ -9,6 +9,7 @@ class index extends Component
 {
     public $name = null;
     public $code = null;
+    public $note = null;
     public $guestwish = null;
 
     public function render()
