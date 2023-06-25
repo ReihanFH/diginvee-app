@@ -140,12 +140,14 @@ class Admin extends Component
                 'name' => $validatedData['name'],
                 'phone' => $this->phonecode . $validatedData['phone'],
                 'status' => (bool) $this->status,
+                'note' => $validatedData['note'],
             ]);
         } else {
             Guest::where('id', $this->guest_id)->update([
                 'name' => $validatedData['name'],
                 'phone' => $validatedData['phone'],
                 'status' => (bool) $this->status,
+                'note' => $validatedData['note'],
             ]);
         }
 
