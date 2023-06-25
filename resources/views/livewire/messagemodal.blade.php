@@ -6,7 +6,7 @@
         <!-- Message Modal -->
         <div wire:ignore.self class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="messageModalLabel">Broadcast Message Template</h5>
@@ -38,7 +38,7 @@
         </button>
         <div wire:ignore.self class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel"
             aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered modal-fullscreen-md-down">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="messageModalLabel">Broadcast Message Template</h5>
