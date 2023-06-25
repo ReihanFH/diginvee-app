@@ -226,6 +226,7 @@ class Admin extends Component
         }
 
         $guests = Guest::where('name', 'like', '%' . $this->search . '%')
+            ->orWhere('note', 'like', '%' . $this->search . '%')
             ->orderBy($this->sortByName, $this->sortDirection)
             ->paginate($this->perPage);
 
