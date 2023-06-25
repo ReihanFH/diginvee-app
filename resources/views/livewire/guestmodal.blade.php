@@ -76,6 +76,24 @@
                     </div>
                     <div class="mb-3">
                         <label>Guest Phone</label>
+                        <div class="row">
+                            <div class="col-4 col-md-3 pe-0">
+                                <select wire:model="phonecode" class="form-select">
+                                    <option value="62">+62</option>
+                                    <option value="61">+61</option>
+                                </select>
+                            </div>
+                            <div class="col-8 col-md-9">
+                                <input type="text" wire:model="phone"
+                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="mb-3">
+                        <label>Guest Phone</label>
                         <div class="input-group">
                             <span class="input-group-text" id="phone-code">+62</span>
                             <input type="text" wire:model="phone"
@@ -84,7 +102,7 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="mb-3">
                         <label>Status</label>
                         <div class="form-check form-switch form-switch-md d-flex align-items-center">
