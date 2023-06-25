@@ -90,11 +90,19 @@ class Admin extends Component
     {
         $validatedData = $this->validate();
 
-        $save_guest = Guest::create([
-            'name' => $validatedData['name'],
-            'phone' => '62' . $validatedData['phone'],
-            'note' => $validatedData['note'],
-        ]);
+        if (!is_null($validatedData['phone'])) {
+            $save_guest = Guest::create([
+                'name' => $validatedData['name'],
+                'phone' => '62' . $validatedData['phone'],
+                'note' => $validatedData['note'],
+            ]);
+        } else {
+            $save_guest = Guest::create([
+                'name' => $validatedData['name'],
+                'phone' => $validatedData['phone'],
+                'note' => $validatedData['note'],
+            ]);
+        }
         $last_id = $save_guest->id;
 
         $guest = Guest::findOrFail($last_id);
