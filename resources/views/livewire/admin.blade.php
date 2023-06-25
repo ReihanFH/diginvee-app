@@ -51,7 +51,7 @@
                         <i class="bi bi-plus-lg"></i> New Guest
                     </button>
 
-                    <div class="float-end">
+                    <div class="float-end my-2">
                         @include('livewire.messagemodal')
                     </div>
                 </div>
