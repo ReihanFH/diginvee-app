@@ -42,10 +42,6 @@
 
             <div class="row my-4 justify-content-end">
                 <div class="col-12">
-                    <button type="button" class="btn app-btn-primary float-end my-2 ms-2" data-bs-toggle="modal"
-                        data-bs-target="#guestModal">
-                        <i class="bi bi-plus-lg"></i> New Guest
-                    </button>
 
                     <button type="button" class="btn app-btn-tertiary float-end my-2 ms-2" data-bs-toggle="modal"
                         data-bs-target="#importModal">
@@ -55,6 +51,11 @@
                     <div class="float-end">
                         @include('livewire.messagemodal')
                     </div>
+
+                    <button type="button" class="btn app-btn-primary float-end my-2 ms-2" data-bs-toggle="modal"
+                        data-bs-target="#guestModal">
+                        <i class="bi bi-plus-lg"></i> New Guest
+                    </button>
                 </div>
             </div>
 
