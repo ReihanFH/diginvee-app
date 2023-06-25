@@ -79,8 +79,12 @@
                         <div class="row">
                             <div class="col-4 col-md-3 pe-0">
                                 <select wire:model="phonecode" class="form-select">
-                                    <option value="62">+62</option>
-                                    <option value="61">+61</option>
+                                    <option value="{{ $phonecode }}">+{{ $phonecode }}</option>
+                                    @if ($phonecode == '61')
+                                        <option value="62">+62</option>
+                                    @else
+                                        <option value="61">+61</option>
+                                    @endif
                                 </select>
                             </div>
                             <div class="col-8 col-md-9">
@@ -92,7 +96,6 @@
                             </div>
                         </div>
                     </div>
-                    {{ $phonecode }}
                     {{-- <div class="mb-3">
                         <label>Guest Phone</label>
                         <div class="input-group">
