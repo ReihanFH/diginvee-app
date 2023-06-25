@@ -59,7 +59,7 @@
                                         https://arinindra.diginvee.com/{{ $guest->code }}
                                     </div>
                                     <div class="col-auto d-inline-block">
-                                        <a onclick="copy('{{ $saved_top_message . rawurldecode('%0A%0A') . $guest->name . rawurldecode('%0A%0A') . $saved_body_message . rawurldecode('%0A%0A') . 'arinindra.diginvee.com/' . $guest->code }}','#copy_button_{{ $guest->id }}')"
+                                        <a onclick="copy('https://arinindra.diginvee.com/{{ $guest->code }}','#copy_button_{{ $guest->id }}')"
                                             id="copy_button_{{ $guest->id }}" class="copy-button" title="Copy"><i
                                                 class="bi bi-files"></i></a>
                                     </div>
