@@ -59,7 +59,7 @@ class Admin extends Component
     protected function rules()
     {
         return [
-            'name' => 'required|string|min:6',
+            'name' => 'required|string',
             'phone' => 'nullable|numeric|digits_between:9,12',
             'note' => 'nullable|string'
         ];
