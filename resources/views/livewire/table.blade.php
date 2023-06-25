@@ -24,14 +24,15 @@
                     <thead>
                         <tr>
                             <th class="cell">No</th>
-                            <th class="cell sortable" wire:click="sortBy('name')">Name
-                                {{-- <span class="float-end d-flex">
+                            <th class="cell">Name</th>
+                            {{-- <th class="cell sortable" wire:click="sortBy('name')">Name
+                                <span class="float-end d-flex">
                                     <i
                                         class="bi bi-arrow-down-short {{ $sortByName === 'name' && $sortDirection === 'desc' ? '' : 'text-black-50 text-opacity-25' }}"></i>
                                     <i
                                         class="bi bi-arrow-up-short {{ $sortByName === 'name' && $sortDirection === 'asc' ? '' : 'text-black-50 text-opacity-25' }}"></i>
-                                </span> --}}
-                            </th>
+                                </span>
+                            </th> --}}
                             <th class="cell">Note</th>
                             {{-- <th class="cell">Phone</th> --}}
                             <th class="cell">Link</th>
