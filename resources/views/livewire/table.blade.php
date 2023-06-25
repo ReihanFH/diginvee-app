@@ -32,6 +32,7 @@
                                         class="bi bi-arrow-up-short {{ $sortByName === 'name' && $sortDirection === 'asc' ? '' : 'text-black-50 text-opacity-25' }}"></i>
                                 </span>
                             </th>
+                            <th class="cell">Note</th>
                             {{-- <th class="cell">Phone</th> --}}
                             <th class="cell">Link</th>
                             {{-- <th class="cell">QR</th> --}}
@@ -50,6 +51,7 @@
                                     {{ ($guests->currentpage() - 1) * $guests->perpage() + $loop->index + 1 }}
                                 </td>
                                 <td class="cell">{{ $guest->name }}</td>
+                                <td class="cell">{{ $guest->note }}</td>
                                 {{-- <td class="cell">{{ $guest->phone }}</td> --}}
                                 <td class="cell">
                                     <div class="col-auto d-inline-block text-truncate align-middle"
