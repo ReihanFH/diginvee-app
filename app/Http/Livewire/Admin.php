@@ -133,11 +133,20 @@ class Admin extends Component
     {
         $validatedData = $this->validate();
 
-        Guest::where('id', $this->guest_id)->update([
-            'name' => $validatedData['name'],
-            'phone' => '62' . $validatedData['phone'],
-            'status' => (bool) $this->status,
-        ]);
+        if (!is_null($validatedData['phone'])) {
+            Guest::where('id', $this->guest_id)->update([
+                'name' => $validatedData['name'],
+                'phone' => '62' . $validatedData['phone'],
+                'status' => (bool) $this->status,
+            ]);
+        } else {
+            Guest::where('id', $this->guest_id)->update([
+                'name' => $validatedData['name'],
+                'phone' => $validatedData['phone'],
+                'status' => (bool) $this->status,
+            ]);
+        }
+
         session()->flash('message', 'Guest Updated Successfully');
         $this->resetInput();
         $this->dispatchBrowserEvent('close-modal');
