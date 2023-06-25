@@ -269,6 +269,107 @@
             </div>
         </section>
     @endif
+    @if ($note == 'Mas Indra')
+        <!-- GIFT -->
+        <section id="gift" class="gift bg-paper py-3">
+            <div class="container mt-5 mb-5">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-12 col-md-8 text-center mb-3">
+                        <h2 data-aos="fade-up">Kirim Hadiah</h2>
+                        <div class="gift-icon" data-aos="fade-up">
+                            <i class="bi bi-gift"></i>
+                        </div>
+                        <p class="text-gift" data-aos="fade-up">Klik tombol di bawah ini untuk mengirim hadiah</p>
+                        <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                            data-bs-target="#gift-modal" data-aos="fade-up"><i class="bi bi-gift"></i>&nbsp;
+                            Kirim
+                            Hadiah</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GIFT MODAL -->
+            <div class="modal fade" id="gift-modal" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="text-end">
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="text-center">
+                                <h2 data-aos="fade-up">Hadiah Pernikahan</h2>
+                                <p class="text-gift" data-aos="fade-up">Bagi Bapak/Ibu/Saudara/i yang ingin
+                                    memberikan hadiah, dapat dilakukan melalui nomor rekening ataupun dompet digital
+                                    berikut :</p>
+                            </div>
+                            <div class="creditcard">
+                                <div class="text-end">
+                                    <img class="img-fluid w-25" src="assets/img/logo-bca.png" />
+                                </div>
+                                <div>
+                                    <div class="my-4">
+                                        <div class="chip">
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-main"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <input hidden id="giftBCA" type="text" value="1672219226" />
+                                                <p class="creditcard-number mb-1">
+                                                    1672219226&nbsp;&nbsp;
+                                                    <a type="button" id="copyBCA" onclick="copyBCA()"
+                                                        class="copy-number"><i class="bi bi-files"></i></a>
+                                                </p>
+                                            </div>
+                                            <p class="creditcard-text mb-1">Aswarin Prastiani</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="creditcard">
+                                <div class="text-end">
+                                    <img class="img-fluid w-25" src="assets/img/logo-dana.svg" />
+                                </div>
+                                <div>
+                                    <div class="my-4">
+                                        <div class="chip">
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-line"></div>
+                                            <div class="chip-main"></div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <input hidden id="giftDANA" type="text" value="081328307474" />
+                                                <p class="creditcard-number mb-1">
+                                                    081328307474&nbsp;&nbsp;
+                                                    <a type="button" id="copyDANA" onclick="copyDANA()"
+                                                        class="copy-number"><i class="bi bi-files"></i></a>
+                                                </p>
+                                            </div>
+                                            <p class="creditcard-text mb-1">Indra Putra Prakasa</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="copied-success" class="copied">
+                                <span>Tersalin!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    @endif
 
     <!-- GALLERY -->
     <section id="gallery" class="gallery">
