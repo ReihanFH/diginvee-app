@@ -111,10 +111,10 @@
                                         class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
-                                    <button type="button" data-bs-toggle="modal" data-bs-target="#deleteGuestModal"
+                                    {{-- <button type="button" data-bs-toggle="modal" data-bs-target="#deleteGuestModal"
                                         wire:click="deleteGuest({{ $guest->id }})" title="Delete Guest"
                                         class="col-auto d-inline-block btn btn-md app-btn-outline-danger m-1"><i
-                                            class="bi bi-trash"></i></i></button>
+                                            class="bi bi-trash"></i></i></button> --}}
                                 </td>
                             </tr>
                         @empty

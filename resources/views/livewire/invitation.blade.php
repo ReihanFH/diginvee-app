@@ -199,10 +199,9 @@
                                 </div>
                                 <div class="text-center">
                                     <h2 data-aos="fade-up">Hadiah Pernikahan</h2>
-                                    <p class="text-gift" data-aos="fade-up">Silahkan kirim hadiah melalui nomor
-                                        rekening
-                                        maupun
-                                        dompet digital berikut :</p>
+                                    <p class="text-gift" data-aos="fade-up">Bagi Bapak/Ibu/Saudara/i yang ingin
+                                        memberikan hadiah, dapat dilakukan melalui nomor rekening ataupun dompet digital
+                                        berikut :</p>
                                 </div>
                                 <div class="creditcard">
                                     <div class="text-end">
