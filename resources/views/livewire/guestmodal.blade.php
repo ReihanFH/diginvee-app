@@ -19,10 +19,13 @@
                     </div>
                     <div class="mb-3">
                         <label>Guest Phone</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="phone-code">+62</span>
+                        <div class="col-12">
+                            <select wire:model="phoneCode" class="form-select col-3">
+                                <option value="+62" selected>+62</option>
+                                <option value="+61">+61</option>
+                            </select>
                             <input type="text" wire:model="phone"
-                                class="form-control @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
+                                class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
                             @error('phone')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
