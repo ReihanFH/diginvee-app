@@ -96,17 +96,14 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div class="mb-3">
-                        <label>Guest Phone</label>
-                        <div class="input-group">
-                            <span class="input-group-text" id="phone-code">+62</span>
-                            <input type="text" wire:model="phone"
-                                class="form-control @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
-                            @error('phone')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                    </div> --}}
+                    <div class="mb-3">
+                        <label>Note</label>
+                        <input type="text" wire:model="note"
+                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @else is-valid @endif">
+                        @error('note')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
+                    </div>
                     <div class="mb-3">
                         <label>Status</label>
                         <div class="form-check form-switch form-switch-md d-flex align-items-center">
@@ -126,8 +123,8 @@
 </div>
 
 <!-- Delete Guest Modal -->
-<div wire:ignore.self class="modal fade" id="deleteGuestModal" tabindex="-1" aria-labelledby="deleteGuestModalLabel"
-    aria-hidden="true" data-bs-backdrop="static">
+<div wire:ignore.self class="modal fade" id="deleteGuestModal" tabindex="-1"
+    aria-labelledby="deleteGuestModalLabel" aria-hidden="true" data-bs-backdrop="static">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header">
