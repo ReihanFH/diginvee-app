@@ -37,7 +37,7 @@
                             {{-- <th class="cell">Phone</th> --}}
                             <th class="cell">Link</th>
                             {{-- <th class="cell">QR</th> --}}
-                            {{-- <th class="cell">Status</th> --}}
+                            <th class="cell">Status</th>
                             <th class="cell">
                                 Actions
                                 <a wire:click="refresh" class="cell cursor-pointer float-end" title="Refresh table"><i
@@ -74,17 +74,17 @@
                                         <i class="bi bi-download"></i>
                                     </a>
                                 </td> --}}
-                                {{-- <td class="cell">
-                                    @if ((bool) $guest->status === false)
+                                <td class="cell">
+                                    @if ((bool) $guest->invited === false)
                                         <span class="badge rounded-pill bg-danger text-danger">
-                                            Not Attend
+                                            Belum Diundang
                                         </span>
-                                    @elseif ((bool) $guest->status === true)
+                                    @elseif ((bool) $guest->invited === true)
                                         <span class="badge rounded-pill bg-success text-success">
-                                            Attended
+                                            Sudah Diundang
                                         </span>
                                     @endif
-                                </td> --}}
+                                </td>
                                 <td class="cell">
                                     <a type="button" href="{{ route('invitation', [$guest->code]) }}"
                                         title="Invitation"

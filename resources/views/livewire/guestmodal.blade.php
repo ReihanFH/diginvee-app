@@ -107,7 +107,7 @@
                     <div class="mb-3">
                         <label>Status</label>
                         <div class="form-check form-switch form-switch-md d-flex align-items-center">
-                            <input wire:model="status" class="form-check-input" type="checkbox" role="switch"
+                            <input wire:model="invited" class="form-check-input" type="checkbox" role="switch"
                                 id="statusSwitch">
                         </div>
                     </div>

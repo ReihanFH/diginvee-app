@@ -19,7 +19,7 @@ class Admin extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $name, $phone, $phonecode = '62', $note, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
+    public $name, $phone, $phonecode = '62', $note, $status, $invited, $guest_id, $all_guests, $attend_guests, $pending_guests;
     public $top_message, $body_message, $bottom_message, $message_id, $saved_top_message, $saved_body_message, $saved_bottom_message;
     public $file;
 
@@ -60,7 +60,7 @@ class Admin extends Component
     {
         return [
             'name' => 'required|string',
-            'phone' => 'nullable|numeric|digits_between:9,12',
+            'phone' => 'nullable|numeric|digits_between:8,13',
             'note' => 'nullable|string'
         ];
     }
@@ -126,6 +126,7 @@ class Admin extends Component
             $this->phone = substr($guest->phone, 2, 11);
             $this->phonecode = substr($guest->phone, 0, 2);
             $this->note = $guest->note;
+            $this->invited = (bool) $guest->invited;
             $this->status = (bool) $guest->status;
         } else {
             return redirect()->to('/');
@@ -140,14 +141,14 @@ class Admin extends Component
             Guest::where('id', $this->guest_id)->update([
                 'name' => $validatedData['name'],
                 'phone' => $this->phonecode . $validatedData['phone'],
-                'status' => (bool) $this->status,
+                'invited' => (bool) $this->invited,
                 'note' => $validatedData['note'],
             ]);
         } else {
             Guest::where('id', $this->guest_id)->update([
                 'name' => $validatedData['name'],
                 'phone' => $validatedData['phone'],
-                'status' => (bool) $this->status,
+                'invited' => (bool) $this->invited,
                 'note' => $validatedData['note'],
             ]);
         }
