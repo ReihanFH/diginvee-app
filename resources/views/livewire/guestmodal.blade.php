@@ -20,13 +20,13 @@
                     <div class="mb-3">
                         <label>Guest Phone</label>
                         <div class="row">
-                            <div class="col-3 pe-0">
+                            <div class="col-4 col-md-2 pe-0">
                                 <select wire:model="phoneCode" class="form-select">
                                     <option value="+62" selected>+62</option>
                                     <option value="+61">+61</option>
                                 </select>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8 col-md-10">
                                 <input type="text" wire:model="phone"
                                     class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
                                 @error('phone')
