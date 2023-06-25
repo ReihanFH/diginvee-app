@@ -12,7 +12,7 @@
                     <div class="mb-3">
                         <label>Guest Name</label>
                         <input type="text" wire:model="name"
-                            class="form-control @if ($errors->has('name')) is-invalid @elseif($name == null) @else is-valid @endif">
+                            class="form-control @if ($errors->has('name')) is-invalid @elseif($name == null) @endif">
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -28,7 +28,7 @@
                             </div>
                             <div class="col-8 col-md-9">
                                 <input type="text" wire:model="phone"
-                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
+                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @endif">
                                 @error('phone')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -38,7 +38,7 @@
                     <div class="mb-3">
                         <label>Note</label>
                         <input type="text" wire:model="note"
-                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @else is-valid @endif">
+                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @endif">
                         @error('note')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -69,7 +69,7 @@
                     <div class="mb-3">
                         <label>Guest Name</label>
                         <input type="text" wire:model="name"
-                            class="form-control @if ($errors->has('name')) is-invalid @elseif($name == null) @else is-valid @endif">
+                            class="form-control @if ($errors->has('name')) is-invalid @elseif($name == null) @endif">
                         @error('name')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -89,7 +89,7 @@
                             </div>
                             <div class="col-8 col-md-9">
                                 <input type="text" wire:model="phone"
-                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
+                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @endif">
                                 @error('phone')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
@@ -99,7 +99,7 @@
                     <div class="mb-3">
                         <label>Note</label>
                         <input type="text" wire:model="note"
-                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @else is-valid @endif">
+                            class="form-control @if ($errors->has('note')) is-invalid @elseif($note == null) @endif">
                         @error('note')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
