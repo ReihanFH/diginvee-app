@@ -28,11 +28,11 @@
                                     Download Excel
                                 </a>
                             </div>
-                            <div class="col-auto">
+                            {{-- <div class="col-auto">
                                 <a type="button" class="btn app-btn-outline-primary" href="/check-in"
                                     target="_blank">Check
                                     In</a>
-                            </div>
+                            </div> --}}
                         </div>
                     </div>
                 </div>
