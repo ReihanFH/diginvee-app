@@ -123,6 +123,7 @@ class Admin extends Component
             $this->guest_id = $guest->id;
             $this->name = $guest->name;
             $this->phone = substr($guest->phone, 2, 11);
+            $this->phonecode = substr($guest->phone, 0, 2);
             $this->status = (bool) $guest->status;
         } else {
             return redirect()->to('/');
