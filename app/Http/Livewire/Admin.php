@@ -19,7 +19,7 @@ class Admin extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $name, $phone, $note, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
+    public $name, $phone, $phonecode, $note, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
     public $top_message, $body_message, $bottom_message, $message_id, $saved_top_message, $saved_body_message, $saved_bottom_message;
     public $file;
 
@@ -93,7 +93,7 @@ class Admin extends Component
         if (!is_null($validatedData['phone'])) {
             $save_guest = Guest::create([
                 'name' => $validatedData['name'],
-                'phone' => '62' . $validatedData['phone'],
+                'phone' => $this->phonecode . $validatedData['phone'],
                 'note' => $validatedData['note'],
             ]);
         } else {
@@ -136,7 +136,7 @@ class Admin extends Component
         if (!is_null($validatedData['phone'])) {
             Guest::where('id', $this->guest_id)->update([
                 'name' => $validatedData['name'],
-                'phone' => '62' . $validatedData['phone'],
+                'phone' => $this->phonecode . $validatedData['phone'],
                 'status' => (bool) $this->status,
             ]);
         } else {

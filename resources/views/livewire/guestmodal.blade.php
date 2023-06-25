@@ -21,7 +21,7 @@
                         <label>Guest Phone</label>
                         <div class="row">
                             <div class="col-4 col-md-3 pe-0">
-                                <select wire:model="phoneCode" class="form-select">
+                                <select wire:model="phonecode" class="form-select">
                                     <option value="+62" selected>+62</option>
                                     <option value="+61">+61</option>
                                 </select>
