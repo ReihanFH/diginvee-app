@@ -97,7 +97,7 @@
                                             @if ($saved_bottom_message !== null)
                                                 @if ($guest->phone !== '62')
                                                     <a type="button"
-                                                        href="https://api.whatsapp.com/send?phone={{ $guest->phone }}&text={{ rawurlencode($saved_top_message) . '%0A%0A' . rawurlencode($guest->name) . '%0A%0A' . rawurlencode($saved_body_message) . '%0A%0A' . rawurlencode('https://arinindra.diginvee.com/' . $guest->code) . '%0A%0A' . rawurlencode($saved_bottom_message) }}"
+                                                        href="https://api.whatsapp.com/send?phone={{ $guest->phone }}&text={{ rawurlencode($saved_top_message) . '%0A' . rawurlencode($guest->name) . '%0A%0A' . rawurlencode($saved_body_message) . '%0A%0A' . rawurlencode('https://arinindra.diginvee.com/' . $guest->code) . '%0A%0A' . rawurlencode($saved_bottom_message) }}"
                                                         title="Share"
                                                         class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1"
                                                         target="_blank">
