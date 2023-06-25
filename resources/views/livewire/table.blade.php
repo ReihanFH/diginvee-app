@@ -88,7 +88,7 @@
                                 <td class="cell">
                                     <a type="button" href="{{ route('invitation', [$guest->code]) }}"
                                         title="Invitation"
-                                        class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1" target="_blank">
+                                        class="col-auto d-inline-block btn btn-sm app-btn-tertiary m-1" target="_blank">
                                         <i class="bi bi-envelope-open"></i>
                                     </a>
 
@@ -99,7 +99,7 @@
                                                     <a type="button"
                                                         href="https://api.whatsapp.com/send?phone=&text={{ rawurlencode($saved_top_message) . '%0A' . rawurlencode($guest->name) . '%0A%0A' . rawurlencode($saved_body_message) . '%0A%0A' . rawurlencode('https://arinindra.diginvee.com/' . $guest->code) . '%0A%0A' . rawurlencode($saved_bottom_message) }}"
                                                         title="Share"
-                                                        class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1"
+                                                        class="col-auto d-inline-block btn btn-sm app-btn-tertiary m-1"
                                                         target="_blank">
                                                         <i class="bi bi-share"></i>
                                                     </a>
@@ -107,7 +107,7 @@
                                                     <a type="button"
                                                         href="https://api.whatsapp.com/send?phone={{ $guest->phone }}&text={{ rawurlencode($saved_top_message) . '%0A' . rawurlencode($guest->name) . '%0A%0A' . rawurlencode($saved_body_message) . '%0A%0A' . rawurlencode('https://arinindra.diginvee.com/' . $guest->code) . '%0A%0A' . rawurlencode($saved_bottom_message) }}"
                                                         title="Share"
-                                                        class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1"
+                                                        class="col-auto d-inline-block btn btn-sm app-btn-tertiary m-1"
                                                         target="_blank">
                                                         <i class="bi bi-share"></i>
                                                     </a>
@@ -117,12 +117,12 @@
                                     @endif
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#updateGuestModal"
                                         wire:click="editGuest({{ $guest->id }})" title="Edit Guest"
-                                        class="col-auto d-inline-block btn btn-md app-btn-tertiary m-1">
+                                        class="col-auto d-inline-block btn btn-sm app-btn-tertiary m-1">
                                         <i class="bi bi-pencil-square"></i>
                                     </button>
                                     <button type="button" data-bs-toggle="modal" data-bs-target="#deleteGuestModal"
                                         wire:click="deleteGuest({{ $guest->id }})" title="Delete Guest"
-                                        class="col-auto d-inline-block btn btn-md app-btn-outline-danger m-1"><i
+                                        class="col-auto d-inline-block btn btn-sm app-btn-outline-danger m-1"><i
                                             class="bi bi-trash"></i></i></button>
                                 </td>
                             </tr>
