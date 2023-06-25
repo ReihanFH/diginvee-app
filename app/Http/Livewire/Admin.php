@@ -80,6 +80,7 @@ class Admin extends Component
     {
         $this->name = '';
         $this->phone = '';
+        $this->note = '';
         $this->top_message = '';
         $this->body_message = '';
         $this->bottom_message = '';
