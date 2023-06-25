@@ -19,7 +19,7 @@ class Admin extends Component
 
     protected $paginationTheme = 'bootstrap';
 
-    public $name, $phone, $phonecode, $note, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
+    public $name, $phone, $phonecode = '62', $note, $status, $guest_id, $all_guests, $attend_guests, $pending_guests;
     public $top_message, $body_message, $bottom_message, $message_id, $saved_top_message, $saved_body_message, $saved_bottom_message;
     public $file;
 
