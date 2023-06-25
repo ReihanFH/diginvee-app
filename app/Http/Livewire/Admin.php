@@ -237,7 +237,7 @@ class Admin extends Component
 
         $guests = Guest::where('name', 'like', '%' . $this->search . '%')
             ->orWhere('note', 'like', '%' . $this->search . '%')
-            ->orderBy($this->sortByName, $this->sortDirection)
+            ->orderBy('created_at', 'asc', $this->sortByName, $this->sortDirection)
             ->paginate($this->perPage);
 
         return view('livewire.admin', ['guests' => $guests]);
