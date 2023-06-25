@@ -123,7 +123,7 @@
                             <h2 class="mb-3" data-aos="fade-up">Resepsi Pernikahan</h2>
                             <p class="card-date my-3" data-aos="fade-up">⇝ Sabtu, 1 Juli 2023 ⇜</p>
                             <p class="card-text my-2" data-aos="fade-up"><i class="bi bi-clock"></i>&nbsp;
-                                11.00 WIB — 13.00 WIB
+                                11.00 — 13.00 WIB
                             </p>
                             <p class="card-text my-2" data-aos="fade-up">
                                 <i class="bi bi-geo-alt"></i>&nbsp;Gedung Auditorium BPSDM Hukum dan HAM<br />
@@ -168,104 +168,111 @@
         </section>
     @endif
 
-    <!-- GIFT -->
-    <section id="gift" class="gift bg-paper py-3">
-        <div class="container mt-5 mb-5">
-            <div class="row d-flex justify-content-center align-items-center">
-                <div class="col-12 col-md-8 text-center mb-3">
-                    <h2 data-aos="fade-up">Kirim Hadiah</h2>
-                    <div class="gift-icon" data-aos="fade-up">
-                        <i class="bi bi-gift"></i>
+    @if ($note != 'Keluarga Mas Indra')
+        @if ($note != 'Temen Aus')
+            <!-- GIFT -->
+            <section id="gift" class="gift bg-paper py-3">
+                <div class="container mt-5 mb-5">
+                    <div class="row d-flex justify-content-center align-items-center">
+                        <div class="col-12 col-md-8 text-center mb-3">
+                            <h2 data-aos="fade-up">Kirim Hadiah</h2>
+                            <div class="gift-icon" data-aos="fade-up">
+                                <i class="bi bi-gift"></i>
+                            </div>
+                            <p class="text-gift" data-aos="fade-up">Klik tombol di bawah ini untuk mengirim hadiah</p>
+                            <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
+                                data-bs-target="#gift-modal" data-aos="fade-up"><i class="bi bi-gift"></i>&nbsp;
+                                Kirim
+                                Hadiah</button>
+                        </div>
                     </div>
-                    <p class="text-gift" data-aos="fade-up">Klik tombol di bawah ini untuk mengirim hadiah</p>
-                    <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal"
-                        data-bs-target="#gift-modal" data-aos="fade-up"><i class="bi bi-gift"></i>&nbsp; Kirim
-                        Hadiah</button>
                 </div>
-            </div>
-        </div>
 
-        <!-- GIFT MODAL -->
-        <div class="modal fade" id="gift-modal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <div class="text-end">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="text-center">
-                            <h2 data-aos="fade-up">Hadiah Pernikahan</h2>
-                            <p class="text-gift" data-aos="fade-up">Silahkan kirim hadiah melalui nomor rekening
-                                maupun
-                                dompet digital berikut :</p>
-                        </div>
-                        <div class="creditcard">
-                            <div class="text-end">
-                                <img class="img-fluid w-25" src="assets/img/logo-bca.png" />
-                            </div>
-                            <div>
-                                <div class="my-4">
-                                    <div class="chip">
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-main"></div>
-                                    </div>
+                <!-- GIFT MODAL -->
+                <div class="modal fade" id="gift-modal" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <div class="text-end">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
                                 </div>
-                                <div>
+                                <div class="text-center">
+                                    <h2 data-aos="fade-up">Hadiah Pernikahan</h2>
+                                    <p class="text-gift" data-aos="fade-up">Silahkan kirim hadiah melalui nomor
+                                        rekening
+                                        maupun
+                                        dompet digital berikut :</p>
+                                </div>
+                                <div class="creditcard">
+                                    <div class="text-end">
+                                        <img class="img-fluid w-25" src="assets/img/logo-bca.png" />
+                                    </div>
                                     <div>
-                                        <div>
-                                            <input hidden id="giftBCA" type="text" value="1672219226" />
-                                            <p class="creditcard-number mb-1">
-                                                1672219226&nbsp;&nbsp;
-                                                <a type="button" id="copyBCA" onclick="copyBCA()"
-                                                    class="copy-number"><i class="bi bi-files"></i></a>
-                                            </p>
+                                        <div class="my-4">
+                                            <div class="chip">
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-main"></div>
+                                            </div>
                                         </div>
-                                        <p class="creditcard-text mb-1">Aswarin Prastiani</p>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <input hidden id="giftBCA" type="text" value="1672219226" />
+                                                    <p class="creditcard-number mb-1">
+                                                        1672219226&nbsp;&nbsp;
+                                                        <a type="button" id="copyBCA" onclick="copyBCA()"
+                                                            class="copy-number"><i class="bi bi-files"></i></a>
+                                                    </p>
+                                                </div>
+                                                <p class="creditcard-text mb-1">Aswarin Prastiani</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="creditcard">
-                            <div class="text-end">
-                                <img class="img-fluid w-25" src="assets/img/logo-dana.svg" />
-                            </div>
-                            <div>
-                                <div class="my-4">
-                                    <div class="chip">
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-line"></div>
-                                        <div class="chip-main"></div>
+                                <div class="creditcard">
+                                    <div class="text-end">
+                                        <img class="img-fluid w-25" src="assets/img/logo-dana.svg" />
                                     </div>
-                                </div>
-                                <div>
                                     <div>
-                                        <div>
-                                            <input hidden id="giftDANA" type="text" value="081328307474" />
-                                            <p class="creditcard-number mb-1">
-                                                081328307474&nbsp;&nbsp;
-                                                <a type="button" id="copyDANA" onclick="copyDANA()"
-                                                    class="copy-number"><i class="bi bi-files"></i></a>
-                                            </p>
+                                        <div class="my-4">
+                                            <div class="chip">
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-line"></div>
+                                                <div class="chip-main"></div>
+                                            </div>
                                         </div>
-                                        <p class="creditcard-text mb-1">Indra Putra Prakasa</p>
+                                        <div>
+                                            <div>
+                                                <div>
+                                                    <input hidden id="giftDANA" type="text"
+                                                        value="081328307474" />
+                                                    <p class="creditcard-number mb-1">
+                                                        081328307474&nbsp;&nbsp;
+                                                        <a type="button" id="copyDANA" onclick="copyDANA()"
+                                                            class="copy-number"><i class="bi bi-files"></i></a>
+                                                    </p>
+                                                </div>
+                                                <p class="creditcard-text mb-1">Indra Putra Prakasa</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+                                <div id="copied-success" class="copied">
+                                    <span>Tersalin!</span>
+                                </div>
                             </div>
-                        </div>
-                        <div id="copied-success" class="copied">
-                            <span>Tersalin!</span>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
+            </section>
+        @endif
+    @endif
 
     <!-- GALLERY -->
     <section id="gallery" class="gallery">
