@@ -20,15 +20,19 @@
                     <div class="mb-3">
                         <label>Guest Phone</label>
                         <div class="row">
-                            <select wire:model="phoneCode" class="form-select col-3">
-                                <option value="+62" selected>+62</option>
-                                <option value="+61">+61</option>
-                            </select>
-                            <input type="text" wire:model="phone"
-                                class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
-                            @error('phone')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
+                            <div class="col-3">
+                                <select wire:model="phoneCode" class="form-select">
+                                    <option value="+62" selected>+62</option>
+                                    <option value="+61">+61</option>
+                                </select>
+                            </div>
+                            <div class="col-9">
+                                <input type="text" wire:model="phone"
+                                    class="form-control col-9 @if ($errors->has('phone')) is-invalid @elseif($phone == null) @else is-valid @endif">
+                                @error('phone')
+                                    <div class="invalid-feedback">{{ $message }}</div>
+                                @enderror
+                            </div>
                         </div>
                     </div>
                     <div class="mb-3">
