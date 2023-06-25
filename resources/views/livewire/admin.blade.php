@@ -42,7 +42,7 @@
 
             <div class="row my-4 justify-content-end">
                 <div class="col-12">
-                    <button type="button" class="btn app-btn-primary float-end my-2 ms-2" data-bs-toggle="modal"
+                    <button type="button" class="btn app-btn-tertiary float-end my-2 ms-2" data-bs-toggle="modal"
                         data-bs-target="#importModal">
                         <i class="bi bi-plus-lg"></i> Import Guest
                     </button>
