@@ -63,7 +63,8 @@ class Admin extends Component
         return [
             'name' => 'required|string',
             'phone' => 'nullable|numeric|digits_between:9,12',
-            'note' => 'nullable|string'
+            'note' => 'nullable|string',
+            'status' => 'nullable'
         ];
     }
 
@@ -98,12 +99,14 @@ class Admin extends Component
                 'name' => $validatedData['name'],
                 'phone' => $this->phonecode . $validatedData['phone'],
                 'note' => $validatedData['note'],
+                'status' => $validatedData['status'],
             ]);
         } else {
             $save_guest = Guest::create([
                 'name' => $validatedData['name'],
                 'phone' => $validatedData['phone'],
                 'note' => $validatedData['note'],
+                'status' => $validatedData['status'],
             ]);
         }
         $last_id = $save_guest->id;

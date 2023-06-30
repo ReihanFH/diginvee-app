@@ -43,6 +43,13 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    <div class="mb-3">
+                        <label for="statusSwitch">Attendance</label>
+                        <div class="form-check form-switch form-switch-md d-flex align-items-center">
+                            <input wire:model="status" class="form-check-input" type="checkbox" role="switch"
+                                id="statusSwitch">
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn app-btn-tertiary" wire:click="closeModal"
