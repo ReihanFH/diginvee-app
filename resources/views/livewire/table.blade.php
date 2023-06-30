@@ -98,28 +98,28 @@
                                             @foreach ($wishes as $wish)
                                                 @if ($guest->name == $wish->name)
                                                     @if ($wish->attendance == 'Hadir')
-                                                        <span class="badge rounded-pill bg-warning text-warning">
+                                                        <span class="badge rounded-pill bg-warning text-black">
                                                             Going
                                                         </span>
                                                     @elseif ($wish->attendance == 'Tidak Hadir')
-                                                        <span class="badge rounded-pill bg-danger text-danger">
+                                                        <span class="badge rounded-pill bg-danger text-white">
                                                             Not Going
                                                         </span>
                                                     @elseif ($wish->attendance == null)
-                                                        <span class="badge rounded-pill bg-secondary text-secondary">
+                                                        <span class="badge rounded-pill bg-secondary text-white">
                                                             Not Invited
                                                         </span>
                                                     @endif
                                                 @break
 
                                             @elseif ($loop->last)
-                                                <span class="badge rounded-pill bg-secondary text-secondary">
+                                                <span class="badge rounded-pill bg-secondary text-white">
                                                     Not Invited
                                                 </span>
                                             @endif
                                         @endforeach
                                     @elseif ((bool) $guest->status == true)
-                                        <span class="badge rounded-pill bg-success text-success">
+                                        <span class="badge rounded-pill bg-success text-white">
                                             Attended
                                         </span>
                                     @endif
@@ -128,28 +128,28 @@
                                         @foreach ($wishes as $wish)
                                             @if ($guest->name == $wish->name)
                                                 @if ($wish->attendance == 'Hadir')
-                                                    <span class="badge rounded-pill bg-warning text-warning">
+                                                    <span class="badge rounded-pill bg-warning text-black">
                                                         Going
                                                     </span>
                                                 @elseif ($wish->attendance == 'Tidak Hadir')
-                                                    <span class="badge rounded-pill bg-danger text-danger">
+                                                    <span class="badge rounded-pill bg-danger text-white">
                                                         Not Going
                                                     </span>
                                                 @elseif ($wish->attendance == null)
-                                                    <span class="badge rounded-pill bg-primary text-primary">
+                                                    <span class="badge rounded-pill bg-primary text-white">
                                                         Invited
                                                     </span>
                                                 @endif
                                             @break
 
                                         @elseif ($loop->last)
-                                            <span class="badge rounded-pill bg-primary text-primary">
+                                            <span class="badge rounded-pill bg-primary text-white">
                                                 Invited
                                             </span>
                                         @endif
                                     @endforeach
                                 @elseif ((bool) $guest->status == true)
-                                    <span class="badge rounded-pill bg-success text-success">
+                                    <span class="badge rounded-pill bg-success text-white">
                                         Attended
                                     </span>
                                 @endif
