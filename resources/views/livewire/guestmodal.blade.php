@@ -105,9 +105,16 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label>Status</label>
+                        <label for="attendSwitch">Invited</label>
                         <div class="form-check form-switch form-switch-md d-flex align-items-center">
                             <input wire:model="invited" class="form-check-input" type="checkbox" role="switch"
+                                id="attendSwitch">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="statusSwitch">Attendance</label>
+                        <div class="form-check form-switch form-switch-md d-flex align-items-center">
+                            <input wire:model="status" class="form-check-input" type="checkbox" role="switch"
                                 id="statusSwitch">
                         </div>
                     </div>

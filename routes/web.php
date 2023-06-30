@@ -2,6 +2,7 @@
 
 use App\Http\Livewire\Admin;
 use App\Http\Livewire\Index;
+use App\Http\Livewire\Checkin;
 use App\Http\Livewire\Invitation;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -25,6 +26,7 @@ use App\Http\Controllers\AuthController;
 //     return view('welcome');
 // })->name('admin')->middleware('auth');
 Route::get('/admin', Admin::class)->name('admin')->middleware('auth');
+Route::get('/check-in', Checkin::class)->name('check-in');
 
 Route::get('/login', [AuthController::class, 'login'])->name('login')->middleware('guest');
 Route::post('/login-attempt', [AuthController::class, 'authenticate'])->middleware('guest');

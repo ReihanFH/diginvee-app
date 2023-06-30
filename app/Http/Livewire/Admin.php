@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Wish;
 use App\Models\Guest;
 use App\Models\Message;
 use Livewire\Component;
@@ -24,6 +25,7 @@ class Admin extends Component
     public $file;
 
     public $search = '';
+    public $filter = false;
     public $perPage = 20;
 
     public $sortByName = 'created_at';
@@ -142,6 +144,7 @@ class Admin extends Component
                 'name' => $validatedData['name'],
                 'phone' => $this->phonecode . $validatedData['phone'],
                 'invited' => (bool) $this->invited,
+                'status' => (bool) $this->status,
                 'note' => $validatedData['note'],
             ]);
         } else {
@@ -149,6 +152,7 @@ class Admin extends Component
                 'name' => $validatedData['name'],
                 'phone' => $validatedData['phone'],
                 'invited' => (bool) $this->invited,
+                'status' => (bool) $this->status,
                 'note' => $validatedData['note'],
             ]);
         }
@@ -171,7 +175,6 @@ class Admin extends Component
         $this->dispatchBrowserEvent('close-modal');
         $this->dispatchBrowserEvent('show-toasts');
     }
-
 
     // Export Excel
     public function export()
@@ -250,12 +253,19 @@ class Admin extends Component
             $this->saved_bottom_message = $find_message->bottom_message;
         }
 
-        $guests = Guest::where('name', 'like', '%' . $this->search . '%')
-            ->orWhere('note', 'like', '%' . $this->search . '%')
-            ->orderBy('id', 'asc')
+        $guests = Guest::where(function ($query) {
+            return $query->where('name', 'like', '%' . $this->search . '%')
+                ->orWhere('note', 'like', '%' . $this->search . '%');
+        })
+            ->when($this->filter, function ($query, $status) {
+                $filterValue = $this->filter ? 1 : 0;
+                return $query->where('status', $filterValue);
+            })
             ->paginate($this->perPage);
 
-        return view('livewire.admin', ['guests' => $guests]);
+        $wishes = Wish::latest()->get();
+
+        return view('livewire.admin', ['guests' => $guests, 'wishes' => $wishes]);
     }
 
     // Logout

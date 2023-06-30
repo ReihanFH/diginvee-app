@@ -140,20 +140,7 @@
     </section>
 
     <!-- QR Code -->
-    @if ($code == null)
-        <section id="qr" class="qr py-2">
-            <div class="row align-items-center py-3 mx-4">
-                <div class="col-md-4 mx-auto text-center">
-                    <h2 data-aos="fade-up">QR Code</h2>
-                    <p data-aos="fade-up" class="text-qr">Mohon tunjukkan QR Code saat menghadiri acara resepsi</p>
-                    <img data-aos="fade-up" src="data:image/png;base64, {!! base64_encode(
-                        QrCode::format('png')->size(500)->margin(2)->generate('cfcd208495d5'),
-                    ) !!}"
-                        class="mx-auto col-md-4" style="width: 100%; height: auto">
-                </div>
-            </div>
-        </section>
-    @else
+    @if (!is_null($code))
         <section id="qr" class="qr py-2">
             <div class="row align-items-center py-3 mx-4">
                 <div class="col-md-4 mx-auto text-center">
